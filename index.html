@@ -1,18 +1,19 @@
+<!-- Integrate languages -->
 <!DOCTYPE html>
 <html >
 <head>
   <meta charset="UTF-8">
   <title>AlgoCode</title>
   <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">var type_comments="//",v=type_comments+"AlgoCode by 'S@n1x-D4rk3r' https://github.com/sanix-darker\n\n";</script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="css/normalize.min.css">
   <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
   <link rel='stylesheet prefetch' href='css/bootstrap-select.min.css'>
 
   <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
@@ -21,15 +22,35 @@
   <div class="row">
 
     <div class="col-md-12">
-      <center><h1><\AlgoCode/></h1></center>
+      <center>
+        <img src="logo.png" style="width: 90px;margin-bottom: -30px;">
+        <h1><\AlgoCode/></h1>
+      </center>
     </div>
-    <div class="col-md-12 col-sm-12 codeSide">
+    <div class="col-md-12 col-sm-12">
       <div class="row">
         <div class="col-md-3 col-sm-3">
-          <textarea class="form-control" style="height: 400px;">Write your algorithm there...</textarea>
+          <!-- To select an example -->
+          <select class="selectpicker" data-live-search="true" class="form-control" name="exemple" style="width: 200px;float: right;">
+            <option>Examples</option>
+            <optgroup label="Basics">
+              <option> Input / Output</option>
+              <option> Conditions </option>
+              <option> Loop </option>
+              <option> Functions </option>
+            </optgroup>
+            <optgroup label="Middle">
+              <option> Classes </option>
+            </optgroup>
+            <optgroup label="Expert"> 
+            </optgroup>
+          </select>
+
+          <textarea class="form-control" style="height: 390px;"> // Write your algorithm there...</textarea>
         </div>
-        <div class="col-md-9 col-sm-9">
+        <div class="col-md-6 col-sm-6 codeSide">
           <div class="compile-code" >
+            <!-- Bouton to generate the code -->
             <input type="button" class="btn btn-success" value="Generate code">
             <!-- Language Selection -->
             <select class="selectpicker" data-live-search="true" class="form-control" name="Language" id="mode" onchange="changeMode()" >
@@ -37,6 +58,7 @@
               <option value="c++" id="c++">C++</option>
               <option value="python2" id="python2">Python2</option>
               <option value="python3" id="python3">Python3</option>
+              <option value="php" id="php">PHP</option>
               <option value="java" id="java">Java</option>
             </select>
             <!-- Editor -->
@@ -44,7 +66,25 @@
             <input type="submit" id="compile" class="btn btn-sky text-uppercase btn-sm" value="Compile">
           </div>
         </div>
+
+        <div class="col-md-3">
+
+          <h4>Console</h4>
+          <div class="console"></div>
+        </div>
+
       </div>
+
+      <div class="row">
+        <center>AlgoCode All rights reserved by Sanix Darker 
+          <!-- To select the language -->
+          <select class="selectpicker" data-live-search="true" class="form-control" name="Language" id="lang" onchange="changeLang()" >
+            <option value="en" id="english" selected>English</option>
+            <option value="fr" id="french">French</option>
+          </select>
+        </center>
+      </div>
+
     </div>
     <!-- /.col-md-12 col-sm-12 codeSide -->
   </div>
@@ -58,6 +98,10 @@
 <script src='js/ace.js'></script>
 
 <script src="js/index.js"></script>
-
+<style type="text/css">
+  .console{
+    margin-top:10px;border: 1px solid rgb(200,200,200);max-height: 390px;height: 390px;overflow:auto;border-radius: 10px;
+  }
+</style>
 </body>
 </html>
