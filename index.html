@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/normalize.min.css">
   <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
   <link rel='stylesheet prefetch' href='css/bootstrap-select.min.css'>
-
+  <link rel="icon" href="img/logo.png" sizes="32x32">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,35 +23,74 @@
 
     <div class="col-md-12">
       <center>
-        <img src="logo.png" style="width: 90px;margin-bottom: -30px;">
-        <h1><\AlgoCode/></h1>
+        <h2 class="toptitle"><\AlgoCode/></h2><br>
       </center>
     </div>
     <div class="col-md-12 col-sm-12">
       <div class="row">
         <div class="col-md-3 col-sm-3">
           <!-- To select an example -->
-          <select class="selectpicker" data-live-search="true" class="form-control" name="exemple" style="width: 200px;float: right;">
-            <option>Examples</option>
-            <optgroup label="Basics">
-              <option> Input / Output</option>
-              <option> Conditions </option>
-              <option> Loop </option>
-              <option> Functions </option>
-            </optgroup>
-            <optgroup label="Middle">
-              <option> Classes </option>
-            </optgroup>
-            <optgroup label="Expert"> 
-            </optgroup>
-          </select>
+          <div class="algorithmOptions" style="margin-left: -17px;">
+            <div class="col-md-6">
+              <select class="selectpicker" data-live-search="true" class="form-control" name="exemple">
+                <option>Examples</option>
+                <optgroup label="Basics">
+                  <option> Input / Output</option>
+                  <option> Conditions </option>
+                  <option> Loop </option>
+                  <option> Functions </option>
+                </optgroup>
+                <optgroup label="Middle">
+                  <option> Classes </option>
+                </optgroup>
+                <optgroup label="Expert"> 
+                </optgroup>
+              </select>
+            </div>
 
-          <textarea class="form-control" style="height: 390px;"> // Write your algorithm there...</textarea>
+            <div class="col-md-6">
+              <select class="selectpicker" data-live-search="true" class="form-control" name="exercice">
+                <option>Exercice</option>
+                <optgroup label="Basics">
+                  <option> Input / Output</option>
+                  <option> Conditions </option>
+                  <option> Loop </option>
+                  <option> Functions </option>
+                </optgroup>
+                <optgroup label="Middle">
+                  <option> Classes </option>
+                </optgroup>
+                <optgroup label="Expert"> 
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          
+
+          <textarea class="form-control " style="height: 300px;margin-top: 50px;width: 100%;"> // Write your algorithm there...</textarea>
+
+            <div class="algorithmOptions" style="margin-left: -5px;">
+              <select class="selectpicker" data-live-search="true" class="form-control" name="exercice">
+                <option>Learn algorithms</option>
+                <optgroup label="Basics">
+                  <option> Input / Output</option>
+                  <option> Conditions </option>
+                  <option> Loop </option>
+                  <option> Functions </option>
+                </optgroup>
+                <optgroup label="Middle">
+                  <option> Classes </option>
+                </optgroup>
+                <optgroup label="Expert"> 
+                </optgroup>
+              </select>
+            </div>
         </div>
         <div class="col-md-6 col-sm-6 codeSide">
           <div class="compile-code" >
+
             <!-- Bouton to generate the code -->
-            <input type="button" class="btn btn-success" value="Generate code">
+            <input type="button" class="btn btn-success" value="Convert to code">
             <!-- Language Selection -->
             <select class="selectpicker" data-live-search="true" class="form-control" name="Language" id="mode" onchange="changeMode()" >
               <option value="c" id="c" selected>C</option>
@@ -61,27 +100,37 @@
               <option value="php" id="php">PHP</option>
               <option value="java" id="java">Java</option>
             </select>
+
+            <input type="submit" id="compile" class="btn btn-sky text-uppercase btn-sm" value="Compile">
             <!-- Editor -->
             <pre name="code" id="editor" style="border: none;"></pre>
-            <input type="submit" id="compile" class="btn btn-sky text-uppercase btn-sm" value="Compile">
+
           </div>
         </div>
 
         <div class="col-md-3">
 
-          <h4>Console</h4>
-          <div class="console"></div>
+          <div class="console">
+             > Console
+          </div>
         </div>
 
       </div>
-
+      <br>
       <div class="row">
-        <center>AlgoCode All rights reserved by Sanix Darker 
+        <center>
+        <div class="col-md-3 "></div>
+          <div class="col-md-4 ">
+            © 2017 AlgoCode All rights reserved by Sanix Darker.
+          </div>
+          <div class="col-md-2">
+              <select class="form-control" name="Language" style="margin-top: -7px;"  >
+                <option value="en" id="english" selected>English</option>
+                <option value="fr" id="french">French</option>
+              </select>
+          </div>
+          <div class="col-md-3 "></div>
           <!-- To select the language -->
-          <select class="selectpicker" data-live-search="true" class="form-control" name="Language" id="lang" onchange="changeLang()" >
-            <option value="en" id="english" selected>English</option>
-            <option value="fr" id="french">French</option>
-          </select>
         </center>
       </div>
 
@@ -98,10 +147,6 @@
 <script src='js/ace.js'></script>
 
 <script src="js/index.js"></script>
-<style type="text/css">
-  .console{
-    margin-top:10px;border: 1px solid rgb(200,200,200);max-height: 390px;height: 390px;overflow:auto;border-radius: 10px;
-  }
-</style>
+
 </body>
 </html>
